@@ -39,19 +39,19 @@ void merge(vector<int> &arr, int low, int mid, int high)
     }
 }
 
-void ms(vector<int> &arr, int low, int high)
+void mS(vector<int> &arr, int low, int high)
 {
     if (low >= high)
         return;
     int mid = (low + high) / 2;
-    ms(arr, low, mid);
-    ms(arr, mid + 1, high);
+    mS(arr, low, mid);
+    mS(arr, mid + 1, high);
     merge(arr, low, mid, high);
 }
 
 void mergeSort(vector<int> &arr, int n)
 {
-    ms(arr, 0, n - 1);
+    mS(arr, 0, n - 1);
 }
 
 int main()

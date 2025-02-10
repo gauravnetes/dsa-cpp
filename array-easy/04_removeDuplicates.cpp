@@ -8,8 +8,8 @@ int removeDuplicates(vector<int> &arr, int n)
     {
         if (arr[i] != arr[j])
         {
-            i++;
-            arr[i] = arr[j];
+            arr[i + 1] = arr[j];
+            i++; 
         }
     }
     return i + 1; // return the size of the array of unique elements || no. of unique elements

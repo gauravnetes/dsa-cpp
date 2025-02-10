@@ -4,28 +4,29 @@ using namespace std;
 vector<int> moveZeroes(vector<int> &arr, int n)
 {
     int j = -1; 
-    for(int i = 0; i < n; i++) {
-        if(arr[i] == 0) {
+    // find the first 0 and assign it the j pointer
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i]  == 0)
+        {
             j = i; 
-            break;
+            break; 
         }
     }
-    if (j == -1)
-    {
-        return arr; 
-    }
-    
 
+    // swap operation
     for (int i = j + 1; i < n; i++)
     {
-        if(arr[i] != 0) {
-            int temp = arr[i]; 
-            arr[i] = arr[j]; 
-            arr[j] = temp; 
-            j++;
+        if (arr[i] != arr[j])
+        {
+            swap(arr[i], arr[j]); 
+            j++; 
         }
+        
     }
-    return arr; 
+    
+    return arr;
+        
     
 }
 

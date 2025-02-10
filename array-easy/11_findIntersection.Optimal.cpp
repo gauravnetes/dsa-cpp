@@ -11,14 +11,14 @@ vector<int> findIntersect(vector<int> &a, vector<int> &b, int s1, int s2)
     while (i < s1 && j < s2)
     {
         if (a[i] < b[j]) i++; 
-        else if(b[j] < a[i]) j++; 
+        else if (a[i] > b[j]) j++; 
         else {
-            result.push_back(a[i]);
-            i++;
+            result.push_back(a[i]); 
+            i++; 
             j++; 
         }
     }
-    return result; 
+    return result;    
 }
 
 int main()

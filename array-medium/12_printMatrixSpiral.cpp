@@ -3,40 +3,53 @@ using namespace std;
 
 vector<int> printMatrixSpiral(vector<vector<int>> &matrix)
 {
-    int m = matrix.size(); 
-        int n = matrix[0].size(); 
-        int left = 0, right = n - 1; 
-        int top = 0, bottom = m - 1; 
-        vector<int> result; 
+    int m = matrix.size();
+    int n = matrix[0].size();
+    int left = 0, right = n - 1;
+    int top = 0, bottom = m - 1;
+    vector<int> result;
 
-        while(top <= bottom && left <= right) {
-            // right
-            for(int i = left; i <= right; i++) {
-                result.push_back(matrix[top][i]);  
-            }
-            top++;
-            // bottom
-            for(int i = top; i <= bottom; i++) {
-                result.push_back(matrix[i][right]);  
-            }
-            right--;
-            
-            if(top <= bottom) {
-                // left
-                for(int i = right; i >= left; i--) {
-                    result.push_back(matrix[bottom][i]); 
-                }
-                bottom--; 
-            }
-            if(left <= right) {
-                // top
-                for(int i = bottom; i >= top; i--) {
-                    result.push_back(matrix[i][left]); 
-                }
-                left++; 
-            }
+    while (top <= bottom && left <= right)
+    {
+
+        // right
+        for (int i = left; i <= right; i++)
+        {
+            result.push_back(matrix[top][i]);
         }
-        return result; 
+        top++;
+
+        // bottom
+        for (int i = top; i <= bottom; i++)
+        {
+            result.push_back(matrix[i][right]);
+        }
+        right--;
+
+        if (top <= bottom)
+        {
+
+            // left
+            for (int i = right; i >= left; i--)
+            {
+                result.push_back(matrix[bottom][i]);
+            }
+            bottom--;
+        }
+
+        if (left <= right)
+        {
+
+            // top
+            for (int i = bottom; i >= top; i--)
+            {
+                result.push_back(matrix[i][left]);
+            }
+            left++;
+        }
+    }
+
+    return result;
 }
 
 int main()
@@ -64,8 +77,9 @@ int main()
         vector<int> matrixSpiral = printMatrixSpiral(matrix);
 
         // Print the modified matrix
-        for(int i = 0; i < matrixSpiral.size(); i++) {
-            cout << matrixSpiral[i] << " "; 
+        for (int i = 0; i < matrixSpiral.size(); i++)
+        {
+            cout << matrixSpiral[i] << " ";
         }
     }
 

@@ -3,17 +3,17 @@ using namespace std;
 
 int findSubArrSumEqualsK(vector<int> &arr, int n, int k)
 {       
-    map<int, int> mpp;
-        mpp[0] = 1; 
-        int prefixSum = 0, count = 0; 
-        
-        for(int i = 0; i < arr.size(); i++) {
-            prefixSum += arr[i]; 
-            int remove = prefixSum - k; 
-            count += mpp[remove]; 
-            mpp[prefixSum] += 1; 
-        }
-        return count;
+    map<int, int> mpp; 
+    int preSum = 0, cnt = 0; 
+    mpp[0] = 1; 
+    for (int i = 0; i < n; i++)
+    {
+        preSum += arr[i]; 
+        int remove = preSum - k; 
+        cnt += mpp[remove]; 
+        mpp[preSum] += 1; 
+    }
+    return cnt; 
 }   
 
 int main()

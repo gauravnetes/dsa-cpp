@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int findMajorityElement(vector<int> &arr, int n)
+vector<int> findMajorityElement(vector<int> &arr, int n)
 {       
     int count1 = 0, count2 = 0, el1 = INT_MIN, el2 = INT_MIN; 
         for(int i = 0; i < arr.size(); i++) {
@@ -46,9 +46,12 @@ int main()
             cin >> arr[i];
         }
 
-        int majorityElement = findMajorityElement(arr, n);
-        cout << majorityElement << endl;
-
+        vector<int> majorityElement = findMajorityElement(arr, n); 
+        for (int i = 0; i < majorityElement.size(); i++)
+        {
+            cout << majorityElement[i] << " "; 
+        }
+        cout << endl; 
     }
     return 0;
 }

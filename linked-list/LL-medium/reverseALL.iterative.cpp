@@ -21,6 +21,38 @@ Node* reverseList(Node* head) {
     return prev;
 }
 
+// 1st
+// 3 - 4 - 5 - 6 - x
+// temp = 3 
+// prev = nullptr
+// front = 4
+// 3 -> next = nullptr
+// prev = 3
+// temp = 4 
+
+// 2nd
+// temp = 4
+// front = 5
+// 4 -> next = 3
+// prev = 4
+// temp = 5
+
+// 3rd 
+// temp = 5
+// front = 6
+// 5 -> next = 4
+// prev = 5
+// temp = 6
+
+// 4th
+// temp = 6
+// fornt = x
+// 6->next = 5
+// prev = 6
+// temp = x
+
+// return 6 -> head of the reversed LL
+
 // Function to insert a node at the end of the linked list
 void insert(Node*& head, int data) {
     Node* newNode = new Node(data);

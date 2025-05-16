@@ -71,9 +71,7 @@ vector<int> findPSE(vector<int> &arr) {
         while(!st.empty() && st.top() >= arr[i]) {
             st.pop(); 
         }
-        if(st.empty()) psE[i] = -1; 
-        else 
-            psE[i] = st.top(); 
+        psE[i] = st.empty() ? -1 : st.top(); 
 
         st.push(arr[i]); 
     }

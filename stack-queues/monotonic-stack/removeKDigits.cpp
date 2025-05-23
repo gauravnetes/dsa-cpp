@@ -9,7 +9,7 @@ string removeKdigits(string num, int k) {
             k--;
         }
         st.push(ch);
-    }
+    } 
 
     while (k > 0 && !st.empty()) {
         st.pop();
